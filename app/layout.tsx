@@ -5,6 +5,9 @@ import { DM_Sans } from "next/font/google";
 
 import { ThemeProvider } from "@/providers/themeProvider";
 
+import Background from "@/components/global/Background";
+import Header from "@/components/global/Header";
+
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     default: "Nikesh Cohen | Full-Stack Developer Portfolio",
     template: "%s | Nikesh Cohen",
   },
-  description: "",
+  description: "Full-Stack Developer Portfolio showcasing projects and skills",
   keywords:
     "Full-stack developer, portfolio, web development, React, Tailwind CSS, Node.js, TypeScript, JavaScript, developer projects",
   authors: {
@@ -27,7 +30,8 @@ export const metadata: Metadata = {
   publisher: "Nikesh Cohen",
   openGraph: {
     title: "Nikesh Cohen | Full-Stack Developer Portfolio",
-    description: "",
+    description:
+      "Full-Stack Developer Portfolio showcasing projects and skills",
     url: "https://your-portfolio-site.com",
     type: "website",
     locale: "en",
@@ -38,7 +42,8 @@ export const metadata: Metadata = {
     site: "@nikesccohen",
     creator: "@nikesccohen",
     title: "Nikesh Cohen | Full-Stack Developer Portfolio",
-    description: "",
+    description:
+      "Full-Stack Developer Portfolio showcasing projects and skills",
   },
 };
 
@@ -52,7 +57,7 @@ export default function RootLayout({
       <body
         className={cn(
           font.className,
-          "bg-background text-foreground antialiased",
+          "relative bg-background text-foreground antialiased",
         )}
       >
         <ThemeProvider
@@ -61,6 +66,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Background />
+          <Header />
           {children}
         </ThemeProvider>
       </body>
