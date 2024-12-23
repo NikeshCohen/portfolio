@@ -15,7 +15,6 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -73,7 +72,7 @@ export default function Header() {
                   {link.label}
                   {pathname === link.href && (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-primary/10"
+                      className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
                       layoutId="navbar-active"
                       transition={{
                         type: "spring",
