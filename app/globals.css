@@ -76,5 +76,5 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: hsl(var(--primary));
 }
