@@ -4,3 +4,11 @@ export type SkillIcon = {
   darkIcon?: string;
   singleIcon?: string;
 };
+
+export type Project = {
+  name: string;
+  imageUrl: string;
+  description: string;
+  url: string;
+  github?: string;
+};

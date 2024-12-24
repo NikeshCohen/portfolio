@@ -37,7 +37,7 @@ function SkillIcon({ icon }: { icon: SkillIcon }) {
 
 function Skills() {
   return (
-    <section id="skills" className="py-16">
+    <section id="skills" className="layout">
       <div className="container mx-auto px-4">
         <h1 className="inline-block text-4xl font-bold lg:text-5xl">Skills</h1>
 

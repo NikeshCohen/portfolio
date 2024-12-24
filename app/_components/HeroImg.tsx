@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import Image from "next/image";
@@ -14,7 +16,7 @@ function HeroImg() {
           }`}
         >
           <Image
-            src="/hero-img.jpg"
+            src="/hero-img.webp"
             alt="nikesh cohen"
             layout="fill"
             objectFit="cover"

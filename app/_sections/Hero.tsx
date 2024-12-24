@@ -1,8 +1,6 @@
-"use client";
-
-import React, { useState } from "react";
-
 import Link from "next/link";
+
+import { ArrowRightIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +10,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="grid min-h-[70vh] grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center"
+      className="layout grid min-h-[70vh] grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center"
     >
       <div className="lg:col-span-2">
         <h1 className="inline-block text-4xl font-bold lg:text-5xl">
@@ -41,13 +39,22 @@ function Hero() {
         </div>
 
         <div className="mt-6 flex flex-col gap-3 md:flex-row">
-          <Link href="https://www.linkedin.com/in/nikesh-cohen">
-            <Button className="w-full md:w-auto">View LinkedIn</Button>
-          </Link>
-          <Link href="https://github.com/NikeshCohen">
+          <Link href="https://www.linkedin.com/in/nikesh-cohen" target="_blank">
             <Button
-              className="w-full border-primary bg-transparent text-primary md:w-auto"
+              effect="expandIcon"
+              icon={ArrowRightIcon}
+              iconPlacement="right"
+              className="w-full md:w-auto"
+            >
+              View LinkedIn
+            </Button>
+          </Link>
+
+          <Link href="https://github.com/NikeshCohen" target="_blank">
+            <Button
+              className="w-full border-primary bg-transparent text-primary hover:bg-transparent hover:text-primary md:w-auto"
               variant="outline"
+              effect="ringHover"
             >
               View Github
             </Button>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Hero from "./_sections/Hero";
+import Projects from "./_sections/Projects";
 import Skills from "./_sections/Skills";
 
 function page() {
@@ -8,6 +9,7 @@ function page() {
     <section className="layout">
       <Hero />
       <Skills />
+      <Projects />
     </section>
   );
 }
