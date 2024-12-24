@@ -64,7 +64,7 @@
 
 @layer components {
   .layout {
-    @apply ml-auto mr-auto max-w-7xl px-4 py-28;
+    @apply ml-auto mr-auto max-w-7xl scroll-mt-14 px-4 py-16 md:scroll-mt-24 md:py-24;
   }
 }
 
