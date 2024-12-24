@@ -12,7 +12,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="grid min-h-[75vh] grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center"
+      className="grid min-h-[70vh] grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center"
     >
       <div className="lg:col-span-2">
         <h1 className="inline-block text-4xl font-bold lg:text-5xl">
