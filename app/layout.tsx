@@ -10,6 +10,7 @@ import Header from "@/components/global/Header";
 
 import { cn } from "@/lib/utils";
 
+import Footer from "./_sections/Footer";
 import "./globals.css";
 
 const font = DM_Sans({ subsets: ["latin"] });
@@ -69,6 +70,7 @@ export default function RootLayout({
           <Background />
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

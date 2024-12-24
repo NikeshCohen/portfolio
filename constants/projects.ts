@@ -3,7 +3,7 @@ import type { Project } from "@/types";
 export const PROJECTS: Project[] = [
   {
     name: "QikLearn",
-    imageUrl: "/projects/QikLearn.webp",
+    imageUrl: "/projects/qikLearn.webp",
     description:
       "An AI-powered learning platform that transforms YouTube videos, documents, and articles into interactive learning material. Designed for quick and engaging education.",
     url: "https://qiklearn.club/",
