@@ -6,6 +6,7 @@ import Link from "next/link";
 import { PROJECTS } from "@/constants/projects";
 import type { Project } from "@/types";
 import { ArrowRightIcon } from "lucide-react";
+import { Github } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -69,6 +70,25 @@ function Projects() {
           {PROJECTS.map((project) => (
             <Project key={project.name} project={project} />
           ))}
+        </div>
+      </div>
+
+      <div className="ml-auto mr-auto mt-8 max-w-4xl border-t-4 pt-4">
+        <h2 className="text-center text-2xl font-semibold">Want More?</h2>
+        <p className="mb-2 ml-auto mr-auto mt-4 max-w-2xl text-center">
+          Four projects barely scratch the surface. My GitHub is like an
+          all-you-can-code buffet. Check it out for the full lineup of what I’ve
+          been building!
+        </p>
+
+        <div className="flex justify-center">
+          <Link href="https://github.com/NikeshCohen" target="_blank">
+            <Button variant="default" effect="shineHover">
+              <span>Github</span>
+
+              <Github className="h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
