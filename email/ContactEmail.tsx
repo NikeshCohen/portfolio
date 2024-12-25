@@ -34,7 +34,7 @@ export const ContactEmail = ({ formData, date }: ContactEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>New Error Report</Preview>
+      <Preview>You got mail! {formData.name} reached out</Preview>
       <Body style={main}>
         <Container>
           <Section style={content}>
