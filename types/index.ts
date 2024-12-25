@@ -12,3 +12,12 @@ export type Project = {
   url: string;
   github?: string;
 };
+
+export type ContactEmailProps = {
+  formData: {
+    name: string;
+    email: string;
+    message: string;
+  };
+  date: Date;
+};

@@ -67,12 +67,25 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch(`/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formData,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error(response);
+        throw new Error("Unable to report");
+      }
+
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Failed to send message.");
     } finally {
       setIsLoading(false);
     }
