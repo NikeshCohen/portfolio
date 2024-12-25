@@ -4,9 +4,11 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 
 import { ThemeProvider } from "@/providers/themeProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 import Background from "@/components/global/Background";
 import Header from "@/components/global/Header";
+import Toaster from "@/components/global/Toaster";
 
 import { cn } from "@/lib/utils";
 
@@ -61,12 +63,14 @@ export default function RootLayout({
           "relative bg-background text-foreground antialiased",
         )}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <Background />
           <Header />
           {children}
