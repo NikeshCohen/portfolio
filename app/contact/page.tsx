@@ -106,7 +106,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="layout flex min-h-[90vh] items-center">
+    <section className="layout flex h-[90vh] items-center pt-40">
       <motion.div
         className="mx-auto max-w-2xl"
         variants={containerVariants}
