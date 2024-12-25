@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     default: "Nikesh Cohen | Full-Stack Developer Portfolio",
     template: "%s | Nikesh Cohen",
   },
+  icons: [{ rel: "icon", url: "/icon.png" }],
   description: "Full-Stack Developer Portfolio showcasing projects and skills",
   keywords:
     "Full-stack developer, portfolio, web development, React, Tailwind CSS, Node.js, TypeScript, JavaScript, developer projects",
