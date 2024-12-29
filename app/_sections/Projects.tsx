@@ -76,7 +76,7 @@ function Projects() {
       <div className="ml-auto mr-auto mt-8 max-w-4xl border-t-4 pt-4">
         <h2 className="text-center text-2xl font-semibold">Want More?</h2>
         <p className="mb-2 ml-auto mr-auto mt-4 max-w-2xl text-center">
-          Four projects barely scratch the surface. My GitHub is like an
+          Five projects barely scratch the surface. My GitHub is like an
           all-you-can-code buffet. Check it out for the full lineup of what I’ve
           been building!
         </p>

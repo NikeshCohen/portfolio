@@ -17,6 +17,14 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/NikeshCohen/DevConnect",
   },
   {
+    name: "InvoSnap",
+    imageUrl: "/projects/invosnap.webp",
+    description:
+      "A sleek and intuitive platform for creating and managing invoices effortlessly. Invosnap simplifies project and payment tracking, helping users stay organized and professional with ease.",
+    url: "https://invosnap.xyz/",
+    github: "https://github.com/NikeshCohen/InvoSnap",
+  },
+  {
     name: "CashCompass",
     imageUrl: "/projects/cashcompass.webp",
     description:
