@@ -1,117 +1,117 @@
+import { skillIcons } from "@/assets/skillIcons";
 import type { SkillIcon } from "@/types";
 
 export const SKILLS: SkillIcon[] = [
   {
     name: "AWS",
-    lightIcon: "/icons/AWS-Light.svg",
-    darkIcon: "/icons/AWS-Dark.svg",
+    lightIcon: skillIcons.AWS.light,
+    darkIcon: skillIcons.AWS.dark,
   },
   {
     name: "Bun",
-    lightIcon: "/icons/Bun-Light.svg",
-    darkIcon: "/icons/Bun-Dark.svg",
+    lightIcon: skillIcons.Bun.light,
+    darkIcon: skillIcons.Bun.dark,
   },
   {
     name: "Cloudflare",
-    lightIcon: "/icons/Cloudflare-Light.svg",
-    darkIcon: "/icons/Cloudflare-Dark.svg",
+    lightIcon: skillIcons.Cloudflare.light,
+    darkIcon: skillIcons.Cloudflare.dark,
   },
   {
     name: "Deno",
-    lightIcon: "/icons/DENO-Light.svg",
-    darkIcon: "/icons/DENO-Dark.svg",
+    lightIcon: skillIcons.Deno.light,
+    darkIcon: skillIcons.Deno.dark,
   },
   {
     name: "Electron",
-    singleIcon: "/icons/Electron.svg",
+    singleIcon: skillIcons.Electron.single,
   },
   {
     name: "ExpressJS",
-    lightIcon: "/icons/ExpressJS-Light.svg",
-    darkIcon: "/icons/ExpressJS-Dark.svg",
+    lightIcon: skillIcons.ExpressJS.light,
+    darkIcon: skillIcons.ExpressJS.dark,
   },
   {
     name: "Git",
-    singleIcon: "/icons/Git.svg",
+    singleIcon: skillIcons.Git.single,
   },
   {
     name: "GoLang",
-    singleIcon: "/icons/GoLang.svg",
+    singleIcon: skillIcons.GoLang.single,
   },
-
   {
     name: "JavaScript",
-    singleIcon: "/icons/JavaScript.svg",
+    singleIcon: skillIcons.JavaScript.single,
   },
   {
     name: "Linux",
-    lightIcon: "/icons/Linux-Light.svg",
-    darkIcon: "/icons/Linux-Dark.svg",
+    lightIcon: skillIcons.Linux.light,
+    darkIcon: skillIcons.Linux.dark,
   },
   {
     name: "MongoDB",
-    singleIcon: "/icons/MongoDB.svg",
+    singleIcon: skillIcons.MongoDB.single,
   },
   {
     name: "MySQL",
-    lightIcon: "/icons/MySQL-Light.svg",
-    darkIcon: "/icons/MySQL-Dark.svg",
+    lightIcon: skillIcons.MySQL.light,
+    darkIcon: skillIcons.MySQL.dark,
   },
   {
     name: "Netlify",
-    lightIcon: "/icons/Netlify-Light.svg",
-    darkIcon: "/icons/Netlify-Dark.svg",
+    lightIcon: skillIcons.Netlify.light,
+    darkIcon: skillIcons.Netlify.dark,
   },
   {
     name: "Next.js",
-    lightIcon: "/icons/NextJS-Light.svg",
-    darkIcon: "/icons/NextJS-Dark.svg",
+    lightIcon: skillIcons["Next.js"].light,
+    darkIcon: skillIcons["Next.js"].dark,
   },
   {
     name: "NodeJS",
-    lightIcon: "/icons/NodeJS-Light.svg",
-    darkIcon: "/icons/NodeJS-Dark.svg",
+    lightIcon: skillIcons.NodeJS.light,
+    darkIcon: skillIcons.NodeJS.dark,
   },
   {
     name: "PostgreSQL",
-    lightIcon: "/icons/PostgreSQL-Light.svg",
-    darkIcon: "/icons/PostgreSQL-Dark.svg",
+    lightIcon: skillIcons.PostgreSQL.light,
+    darkIcon: skillIcons.PostgreSQL.dark,
   },
   {
     name: "Prisma",
-    singleIcon: "/icons/Prisma.svg",
+    singleIcon: skillIcons.Prisma.single,
   },
   {
     name: "Python",
-    lightIcon: "/icons/Python-Light.svg",
-    darkIcon: "/icons/Python-Dark.svg",
+    lightIcon: skillIcons.Python.light,
+    darkIcon: skillIcons.Python.dark,
   },
   {
     name: "React",
-    lightIcon: "/icons/React-Light.svg",
-    darkIcon: "/icons/React-Dark.svg",
+    lightIcon: skillIcons.React.light,
+    darkIcon: skillIcons.React.dark,
   },
   {
     name: "Redux",
-    singleIcon: "/icons/Redux.svg",
+    singleIcon: skillIcons.Redux.single,
   },
   {
     name: "Remix",
-    lightIcon: "/icons/Remix-Light.svg",
-    darkIcon: "/icons/Remix-Dark.svg",
+    lightIcon: skillIcons.Remix.light,
+    darkIcon: skillIcons.Remix.dark,
   },
   {
     name: "TailwindCSS",
-    lightIcon: "/icons/TailwindCSS-Light.svg",
-    darkIcon: "/icons/TailwindCSS-Dark.svg",
+    lightIcon: skillIcons.TailwindCSS.light,
+    darkIcon: skillIcons.TailwindCSS.dark,
   },
   {
     name: "TypeScript",
-    singleIcon: "/icons/TypeScript.svg",
+    singleIcon: skillIcons.TypeScript.single,
   },
   {
     name: "Vercel",
-    lightIcon: "/icons/Vercel-Light.svg",
-    darkIcon: "/icons/Vercel-Dark.svg",
+    lightIcon: skillIcons.Vercel.light,
+    darkIcon: skillIcons.Vercel.dark,
   },
 ];
