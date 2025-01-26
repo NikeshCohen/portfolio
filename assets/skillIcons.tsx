@@ -1089,14 +1089,14 @@ export const skillIcons = {
   Vercel: {
     light: (
       <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="256" height="256" rx="60" fill="#242938" />
-        <path d="M128 34L223 198.853H33L128 34Z" fill="white" />
+        <rect width="256" height="256" rx="60" fill="#F4F2ED" />
+        <path d="M128 34L223 198.853H33L128 34Z" fill="black" />
       </svg>
     ),
     dark: (
       <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="256" height="256" rx="60" fill="#F4F2ED" />
-        <path d="M128 34L223 198.853H33L128 34Z" fill="black" />
+        <rect width="256" height="256" rx="60" fill="#242938" />
+        <path d="M128 34L223 198.853H33L128 34Z" fill="white" />
       </svg>
     ),
   },
