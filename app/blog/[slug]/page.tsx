@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import "@/app/styles/mdx.css";
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 
@@ -36,12 +37,12 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="mx-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
-        <time dateTime={post.date} className="text-sm text-gray-600">
-          {format(parseISO(post.date), "LLLL d, yyyy")}
+    <article className="layout flex min-h-[90vh] max-w-5xl flex-col pt-40">
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold">{post.title}</h1>
+        <time dateTime={post.date} className="text-sm text-muted-foreground">
+          Published on {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
-        <h1 className="mt-2 text-3xl font-bold">{post.title}</h1>
       </div>
       <Mdx code={post.body.code} />
     </article>

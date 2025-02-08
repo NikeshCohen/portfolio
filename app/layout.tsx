@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 
+import "@/app/styles/globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -13,7 +14,6 @@ import Toaster from "@/components/global/Toaster";
 import { cn } from "@/lib/utils";
 
 import Footer from "./_sections/Footer";
-import "./globals.css";
 
 const font = DM_Sans({ subsets: ["latin"] });
 

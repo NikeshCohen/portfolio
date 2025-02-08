@@ -175,7 +175,7 @@ const youSayGoodbyeISayHello = <TInput extends "hello" | "goodbye">(
 
 But in these situations, it often makes more sense to use as `any`:
 
-```ts
+```ts {1-3,4}
 const youSayGoodbyeISayHello = <TInput extends "hello" | "goodbye">(
   input: TInput,
 ): TInput extends "hello" ? "goodbye" : "hello" => {
