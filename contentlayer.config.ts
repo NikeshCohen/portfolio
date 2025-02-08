@@ -5,14 +5,31 @@ export const Post = defineDocumentType(() => ({
   filePathPattern: `**/*.mdx`,
   contentType: "mdx",
   fields: {
-    title: { type: "string", required: true },
-    date: { type: "date", required: true },
-    summary: { type: "string", required: true },
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    image: {
+      type: "string",
+      required: true,
+    },
+    date: {
+      type: "date",
+      required: true,
+    },
+    author: {
+      type: "string",
+      required: true,
+    },
   },
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
     },
   },
 }));

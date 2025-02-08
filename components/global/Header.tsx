@@ -100,37 +100,37 @@ export default function Header() {
   return (
     <motion.header
       ref={headerRef}
-      className="fixed left-0 right-0 top-5 z-50 mx-auto w-full"
+      className="top-5 right-0 left-0 z-50 fixed mx-auto w-full"
       initial={{ maxWidth: "85%", padding: "16px" }}
       style={{ maxWidth: headerMaxWidth, padding: headerPadding }}
     >
       <motion.div
-        className="flex items-center justify-between rounded-lg border border-border/40 shadow-sm backdrop-blur-md"
+        className="flex justify-between items-center shadow-sm backdrop-blur-md border border-border/40 rounded-lg"
         initial={{ padding: "16px" }}
         style={{ padding: innerPadding }}
       >
         <Link
           href="/"
-          className="text-lg font-extrabold transition-colors hover:text-primary"
+          className="font-extrabold text-lg hover:text-primary transition-colors"
           onClick={(e) => handleLinkClick(e, "/")}
         >
           NikeshCohen
         </Link>
 
-        <nav className="hidden md:block">
+        <nav className="md:block hidden">
           <ul className="flex space-x-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="relative px-3 py-2 transition-colors hover:text-primary"
+                  className="relative px-3 py-2 hover:text-primary transition-colors"
                   onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   {link.label}
                   {((activeSection === link.href && pathname !== "/contact") ||
                     (pathname === "/contact" && link.href === "/contact")) && (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
+                      className="z-[-1] absolute inset-0 bg-primary/30 rounded-md"
                       layoutId="navbar-active"
                       transition={{
                         type: "spring",
@@ -148,7 +148,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <button
-            className="text-foreground transition-colors hover:text-primary md:hidden"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -159,7 +159,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <motion.nav
-          className="mt-2 rounded-lg border border-border/40 shadow-sm backdrop-blur-md md:hidden"
+          className="md:hidden shadow-sm backdrop-blur-md mt-2 border border-border/40 rounded-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -169,7 +169,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block px-4 py-2 transition-colors hover:bg-primary/10"
+                  className="block hover:bg-primary/10 px-4 py-2 transition-colors"
                   onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   {link.label}
