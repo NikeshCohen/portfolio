@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npx next dev --turbo",
-    "dev --blog": "npx contentlayer2 build && next dev",
+    "dev:blog": "npx contentlayer2 build && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

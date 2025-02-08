@@ -1,0 +1,183 @@
+---
+title: "`Any` May Be Easy, But `Unknown` is Smarter: Here’s Why"
+description: "Many developers use any in TypeScript for convenience, but unknown is the smarter choice. This post dives into why, with practical examples to improve type safety"
+date: "2025-02-08"
+author: nikeshcohen
+---
+
+TypeScript’s `any` type often seems like a quick fix when dealing with dynamic or unknown values. It removes type errors, allows us to write code quickly, and gives us full flexibility—but that’s also exactly why it’s dangerous.
+
+A better alternative? **`unknown`**. While `unknown` might require a little more effort, it enforces better practices, reduces runtime errors, and helps maintain code safety in the long run.
+
+Let’s take a deep dive into why `unknown` should be your default choice over `any` and how it can make your code more reliable.
+
+## **The Pitfalls of `any`**
+
+When you use `any`, TypeScript essentially turns off its type-checking mechanisms for that value. It allows you to do anything with the variable—**even things that make no sense**.
+
+Consider the following example:
+
+```typescript
+let data: any = "Hello, world!";
+
+// TypeScript allows this, but it will cause a runtime error
+console.log(data.toFixed(2)); // ❌ Uncaught TypeError: data.toFixed is not a function
+```
+
+Because `data` is typed as `any`, TypeScript assumes we know what we’re doing and lets us call `.toFixed(2)`, even though `data` is actually a string.
+
+The problem? This code compiles without errors, but it **crashes at runtime**.
+
+### **Losing Type Safety**
+
+Another issue with `any` is that once a variable is typed as `any`, **TypeScript stops tracking its structure**, leading to subtle and hard-to-debug issues.
+
+```typescript
+let user: any = { name: "Alice", age: 30 };
+
+console.log(user.address.street); // ❌ No compile-time error, but crashes at runtime
+```
+
+Here, TypeScript doesn’t warn us that `user.address` doesn’t exist because `user` is typed as `any`.
+
+This becomes especially dangerous in large applications, where unexpected `undefined` or `null` values can sneak in and cause unpredictable behavior.
+
+## **How `unknown` Fixes These Issues**
+
+Unlike `any`, **`unknown` still provides flexibility but enforces type checking** before you can use the value.
+
+Let’s rewrite our previous example using `unknown`:
+
+```typescript
+let data: unknown = "Hello, world!";
+
+// TypeScript enforces type checking
+if (typeof data === "number") {
+  console.log(data.toFixed(2)); // ✅ Safe, only runs if data is a number
+} else {
+  console.log("Data is not a number"); // ✅ Prevents runtime errors
+}
+```
+
+Here, we explicitly check the type of `data` before using it. If `data` is not a number, we handle it gracefully instead of causing a crash.
+
+### **Ensuring Type Safety**
+
+Let’s take our `user` object example and see how `unknown` enforces better practices:
+
+```typescript
+let user: unknown = { name: "Alice", age: 30 };
+
+// TypeScript enforces explicit type checking
+if (typeof user === "object" && user !== null && "address" in user) {
+  console.log((user as { address: { street: string } }).address.street);
+} else {
+  console.log("Address information is missing");
+}
+```
+
+Now, TypeScript **forces** us to check if `user` actually contains `address` before we access it. This eliminates the risk of `undefined` property errors.---
+
+## **Working with `unknown` in Functions**
+
+A common use case for `any` is when handling API responses or dynamically typed data. Let’s see how `unknown` improves safety in such scenarios.
+
+### **Using `any` in a Function**
+
+```typescript
+function parseJson(json: string): any {
+  return JSON.parse(json);
+}
+
+const user = parseJson('{"name": "Alice"}');
+
+console.log(user.name.toUpperCase()); // ❌ Possible runtime error if name is missing
+```
+
+This function **trusts that JSON.parse() will return exactly what we expect**, which isn’t always true. If the JSON is malformed or missing keys, this can easily break.
+
+### **Using `unknown` for Safer Parsing**
+
+```typescript
+function parseJsonSafe(json: string): unknown {
+  try {
+    return JSON.parse(json);
+  } catch {
+    return null;
+  }
+}
+
+const user = parseJsonSafe('{"name": "Alice"}');
+
+// Enforcing explicit checks
+if (typeof user === "object" && user !== null && "name" in user) {
+  console.log((user as { name: string }).name.toUpperCase()); // ✅ Safe
+} else {
+  console.log("Invalid JSON data");
+}
+```
+
+## By using `unknown`, we are forced to **validate** that `user` is an object and contains the expected properties before using them.
+
+## **Using `unknown` with Generics**
+
+When working with generics, `unknown` allows you to create more flexible yet safe abstractions.
+
+### **Example: Fetching API Data**
+
+Instead of using `any`, we can leverage `unknown` in a generic function:
+
+```typescript
+async function fetchData<T = unknown>(url: string): Promise<T> {
+  const response = await fetch(url);
+  return response.json();
+}
+
+interface User {
+  name: string;
+  age: number;
+}
+
+async function getUser() {
+  const user = await fetchData<User>("https://api.example.com/user");
+
+  // TypeScript now enforces that user has name and age properties
+  console.log(user.name.toUpperCase());
+}
+```
+
+Here, `fetchData<T>` defaults to `unknown`, ensuring that when fetching data, the caller **must** define the expected type structure.---
+
+## **When is `any` Still Useful?**
+
+Despite its issues, `any` **isn’t entirely evil**—there are a few cases where using `any` is still acceptable:
+
+1. **Gradual Migration from JavaScript**
+
+   - If you’re incrementally converting a JavaScript codebase to TypeScript, `any` can act as a temporary placeholder.
+
+2. **Third-Party Libraries with No Type Definitions**
+
+   - Sometimes, external libraries don’t provide TypeScript types. Using `any` can be a workaround:
+
+   ```typescript
+   declare const legacyLibrary: any;
+   ```
+
+3. **Quick Prototyping**
+   - When you need to test concepts without worrying about strict type enforcement. Just make sure to replace `any` later.---
+
+## **Final Thoughts: Use `unknown` by Default**
+
+While `any` might seem like an easy shortcut, **it’s a trap** that removes type safety and increases the risk of runtime errors.
+
+By defaulting to `unknown`, you:  
+✅ **Ensure type safety**  
+✅ **Prevent accidental property access errors**  
+✅ **Force proper type checks**
+
+The next time you reach for `any`, ask yourself:
+
+> **“Can I use `unknown` instead and make my code safer?”**
+
+Your future self—and your teammates—will thank you. 🚀

@@ -13,7 +13,7 @@
 [data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
-  @apply mr-4 inline-block w-4 text-right text-gray-500;
+  @apply mr-4 inline-block w-4 text-right text-orange-700;
 }
 
 [data-rehype-pretty-code-figure] [data-line] {
