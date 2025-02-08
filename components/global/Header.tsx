@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -14,6 +15,7 @@ const NAV_LINKS = [
   { href: "/#home", label: "Home" },
   { href: "/#skills", label: "Skills" },
   { href: "/#projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -37,7 +39,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname !== "/contact") {
+      if (pathname !== "/contact" && pathname !== "/blog") {
         const sections = document.querySelectorAll<HTMLElement>("section[id]");
         let currentActiveSection = "";
 
@@ -75,8 +77,11 @@ export default function Header() {
     href: string,
   ) => {
     e.preventDefault();
-    if (pathname === "/contact" && href.startsWith("/#")) {
-      // If on contact page and clicking an internal link, navigate to home page first
+    if (
+      (pathname === "/contact" || pathname === "/blog") &&
+      href.startsWith("/#")
+    ) {
+      // If on contact or blog page and clicking an internal link, navigate to home page first
       router.push("/");
       setTimeout(() => {
         const targetId = href.substring(2);
@@ -127,8 +132,11 @@ export default function Header() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   {link.label}
-                  {((activeSection === link.href && pathname !== "/contact") ||
-                    (pathname === "/contact" && link.href === "/contact")) && (
+                  {((activeSection === link.href &&
+                    pathname !== "/contact" &&
+                    pathname !== "/blog") ||
+                    (pathname === "/contact" && link.href === "/contact") ||
+                    (pathname === "/blog" && link.href === "/blog")) && (
                     <motion.div
                       className="z-[-1] absolute inset-0 bg-primary/30 rounded-md"
                       layoutId="navbar-active"
