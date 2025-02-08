@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 import Image from "next/image";
 
+/* eslint-disable @next/next/no-img-element */
+
 function HeroImg() {
   const [isImageLoading, setIsImageLoading] = useState(true);
 

@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
   { name: "GitHub", icon: Github, url: "https://github.com/NikeshCohen" },
