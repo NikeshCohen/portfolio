@@ -1,3 +1,36 @@
+@media (prefers-color-scheme: light) {
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light) !important;
+    background-color: transparent !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-dark) !important;
+    background-color: transparent !important;
+  }
+}
+
+/* dark mode class for conditional !important */
+.dark code[data-theme*=" "],
+.dark code[data-theme*=" "] span {
+  color: var(--shiki-dark) !important;
+  background-color: transparent !important;
+}
+
+.light code[data-theme*=" "],
+.light code[data-theme*=" "] span {
+  color: var(--shiki-light) !important;
+  background-color: transparent !important;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
 [data-rehype-pretty-code-figure] pre {
   @apply px-0;
 }
