@@ -1,0 +1,51 @@
+---
+title: "AI Can Write Code, But Can It Maintain It?"
+description: "AI models like Claude, GPT-4, and Gemini can generate code quickly, but can they maintain large projects? Here’s why AI struggles with project-scale development and what developers can do about it."
+date: "2025-02-14"
+image: "/blog/ai-code-maintenance-limits.webp"
+author: nikeshcohen
+---
+
+AI has changed the way we write code. Tools like **Claude, GPT-4, and Gemini** can generate entire functions, refactor messy code, and even build small applications. But what happens when the project scales beyond a few files?
+
+A [recent post](https://www.reddit.com/r/ChatGPTCoding/comments/1ibtjri/my_project_became_so_big_that_claude_cant/) from a developer who relied entirely on **AI-generated code** sheds light on a key issue: **AI is great at writing code, but it struggles with long-term project maintenance.**
+
+## The Experiment: A 30-File AI-Generated Project
+
+The user in question built a **Python project with over 30 files** using **Claude and Cursor**. Initially, everything seemed to work fine. But as the project grew:
+
+- **Claude started forgetting imports**
+- **Duplicate logic appeared across multiple files**
+- **Bug fixes led to broken functionality**
+- **It struggled to optimize code properly**
+
+### Why Does AI Struggle With Maintenance?
+
+Large-scale software development isn’t just about writing code—it’s about **managing complexity.**
+
+1. **Context Limitations** – Most AI models have a fixed context window. They don’t persist memory between interactions, meaning they **lose track of how different files interact.**
+
+2. **No Project-Level Awareness** – AI operates within **isolated chunks** of code. Unlike a developer who understands the entire architecture, AI lacks a **holistic view** of the system.
+
+3. **Surface-Level Fixes** – AI-generated bug fixes often don’t address **root causes**. Instead of refactoring properly, the model **deletes lines, introduces new errors, or produces redundant logic.**
+
+## AI Struggles Even With "Small" Projects
+
+Let’s be clear—**30 files is not a large codebase.** Many real-world applications have **hundreds or thousands** of files. If AI is already struggling at this scale, **full AI-driven development is still a long way off.**
+
+### What Can You Do?
+
+Instead of relying on AI to “fix” an entire project, consider a **guided approach**:
+
+✅ **Break down tasks**  
+Instead of asking AI to fix "the entire project," request **specific changes** in individual files.
+
+✅ **Improve context**  
+Provide relevant **source files** when asking AI to generate or modify code.
+
+✅ **Refactor manually**  
+AI can assist, but **human review is critical.** Ensure that refactored code aligns with best practices.
+
+## AI is a Tool, Not a Replacement
+
+AI **accelerates development**, but it’s **not a substitute for software engineering skills.** If you don’t understand what AI-generated code does, **you’re not writing code—you’re just hoping it works.**

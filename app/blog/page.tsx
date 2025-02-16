@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import { allPosts } from "contentlayer/generated";
@@ -95,22 +94,6 @@ export default function Page() {
                 variants={itemVariants}
                 className="group relative flex flex-col space-y-4"
               >
-                {post.image && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                  >
-                    <Image
-                      src={post.image || "/placeholder.svg"}
-                      alt={post.title}
-                      width={804}
-                      height={452}
-                      className="rounded-lg border bg-muted shadow-md transition-colors"
-                    />
-                  </motion.div>
-                )}
-
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
