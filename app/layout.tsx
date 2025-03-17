@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/icon.png" }],
   description: "Full-Stack Developer Portfolio showcasing projects and skills",
   keywords:
-    "Full-stack developer, portfolio, web development, React, Tailwind CSS, Node.js, TypeScript, JavaScript, developer projects",
+    "Full-stack developer, portfolio, web development, React, Tailwind CSS, Node.js, TypeScript, JavaScript, Nikesh Cohen, Nikesh, Nikesh Developer, developer projects",
   authors: {
     name: "Nikesh Cohen",
     url: "https://github.com/nikescohen",
