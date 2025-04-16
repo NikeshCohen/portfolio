@@ -20,8 +20,8 @@ function HeroImg() {
           <Image
             src="/hero-img.webp"
             alt="nikesh cohen"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             quality={100}
             className={`rounded-md ring-1 ring-border duration-700 ease-in-out ${
               isImageLoading ? "blur-xl" : "blur-0"
