@@ -26,7 +26,7 @@ function Skills() {
             applications:
           </p>
 
-          <div className="grid grid-cols-4 gap-8 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
+          <div className="grid grid-cols-4 gap-8 md:grid-cols-5 lg:grid-cols-10">
             {SKILLS.map((skill) => (
               <SkillIcon key={skill.name} skill={skill} />
             ))}
