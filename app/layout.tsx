@@ -58,7 +58,7 @@ export default function RootLayout({
       <body
         className={cn(
           font.className,
-          "relative bg-background text-foreground antialiased",
+          "relative w-screen overflow-x-hidden bg-background text-foreground antialiased",
         )}
       >
         <Analytics />

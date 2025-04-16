@@ -105,7 +105,7 @@ export default function Header() {
   return (
     <motion.header
       ref={headerRef}
-      className="fixed left-0 right-0 top-5 z-50 mx-auto w-full"
+      className="fixed left-0 right-0 top-5 z-50 mx-auto w-screen"
       initial={{ maxWidth: "85%", padding: "16px" }}
       style={{ maxWidth: headerMaxWidth, padding: headerPadding }}
     >
