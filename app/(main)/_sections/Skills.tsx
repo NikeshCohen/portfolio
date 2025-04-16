@@ -2,7 +2,7 @@ import React from "react";
 
 import { SKILLS } from "@/constants/skills";
 
-import SkillIcon from "../_components/SkillIcon";
+import SkillIcon from "../../_components/SkillIcon";
 
 function Skills() {
   return (

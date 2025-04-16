@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -62,11 +63,22 @@ export default {
           "25%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "-200% 0" },
         },
+        "gradient-x": {
+          "0%, 100%": {
+            backgroundSize: "200% 200%",
+            backgroundPosition: "left center",
+          },
+          "50%": {
+            backgroundSize: "200% 200%",
+            backgroundPosition: "right center",
+          },
+        },
       },
       animation: {
         shine: "shine 3s ease-out infinite",
+        "gradient-x": "gradient-x 10s ease infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindAnimate],
 } satisfies Config;
