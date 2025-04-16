@@ -1,7 +1,13 @@
 import React from "react";
 
+import NotesInput from "./NotesInput";
+
 function page() {
-  return <div>Coming Soon...</div>;
+  return (
+    <div className="flex h-full w-full">
+      <NotesInput />
+    </div>
+  );
 }
 
 export default page;

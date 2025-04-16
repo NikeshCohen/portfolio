@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Background from "@/components/global/Background";
 import Toaster from "@/components/global/Toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
 
@@ -70,7 +71,7 @@ export default function RootLayout({
         >
           <Toaster />
           <Background />
-          {children}
+          <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -6,8 +6,8 @@ export default function BrainstormLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="container mx-auto py-8">
-      <main>{children}</main>
+    <div className="flex h-screen flex-col">
+      <main className="flex-1 overflow-hidden">{children}</main>
     </div>
   );
 }

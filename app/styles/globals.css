@@ -83,7 +83,6 @@ body,
 ::-webkit-scrollbar {
   width: 6px;
   height: 4px;
-  border-radius: 0.5rem;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -91,4 +90,5 @@ body,
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--primary));
+  border-radius: var(--radius);
 }
