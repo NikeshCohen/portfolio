@@ -39,7 +39,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname !== "/contact" && pathname !== "/blog") {
+      if (pathname === "/" || pathname === "/#home" || pathname === "/#skills" || pathname === "/#projects") {
+        // on home page - detect sections based on scroll
         const sections = document.querySelectorAll<HTMLElement>("section[id]");
         let currentActiveSection = "";
 
@@ -54,7 +55,18 @@ export default function Header() {
           }
         });
 
-        setActiveSection(currentActiveSection);
+        if (currentActiveSection) {
+          setActiveSection(currentActiveSection);
+        }
+      } else if (pathname.startsWith("/blog/")) {
+        // highlight the parent blog route on blog post pages
+        setActiveSection("/blog");
+      } else if (pathname === "/blog") {
+        // blog index page
+        setActiveSection("/blog");
+      } else if (pathname === "/contact") {
+        // contact page
+        setActiveSection("/contact");
       }
     };
 
@@ -77,26 +89,32 @@ export default function Header() {
     href: string,
   ) => {
     e.preventDefault();
-    if (
-      (pathname === "/contact" || pathname === "/blog") &&
-      href.startsWith("/#")
-    ) {
-      // If on contact or blog page and clicking an internal link, navigate to home page first
-      router.push("/");
-      setTimeout(() => {
-        const targetId = href.substring(2);
+    // if on an external page and clicking an internal link, navigate to homepage first
+    if (href.startsWith("/#")) {
+      const targetId = href.substring(2);
+
+      if (pathname === "/") {
+        // already on home page - scroll smoothly
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100);
-    } else if (href.startsWith("/#")) {
-      const targetId = href.substring(2);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // on another page - navigate to home first without hash
+        router.push("/");
+
+        // scroll to target section after short delay to ensure homepage load
+        setTimeout(() => {
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        },
+          // slightly longer timeout to ensure page transition completes
+          300);
       }
     } else {
+      // regular navigation to non-hash routes
       router.push(href);
     }
     setIsMenuOpen(false);
@@ -132,21 +150,19 @@ export default function Header() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   {link.label}
-                  {((activeSection === link.href &&
-                    pathname !== "/contact" &&
-                    pathname !== "/blog") ||
-                    (pathname === "/contact" && link.href === "/contact") ||
-                    (pathname === "/blog" && link.href === "/blog")) && (
-                    <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
-                      layoutId="navbar-active"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
-                  )}
+                  {((activeSection === link.href) ||
+                    (link.href === "/blog" && pathname.startsWith("/blog")) ||
+                    (link.href === "/contact" && pathname === "/contact")) && (
+                      <motion.div
+                        className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
+                        layoutId="navbar-active"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
                 </Link>
               </li>
             ))}
