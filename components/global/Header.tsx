@@ -39,7 +39,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname !== "/contact" && pathname !== "/blog") {
+      if (pathname !== "/contact" && !pathname.startsWith("/blog")) {
+        // other sections
         const sections = document.querySelectorAll<HTMLElement>("section[id]");
         let currentActiveSection = "";
 
@@ -55,6 +56,13 @@ export default function Header() {
         });
 
         setActiveSection(currentActiveSection);
+      } else {
+        // highlight the parent route
+        if (pathname === "/blog" || pathname.startsWith("/blog/")) {
+          setActiveSection("/blog");
+        } else if (pathname === "/contact") {
+          setActiveSection("/contact");
+        }
       }
     };
 
@@ -137,16 +145,16 @@ export default function Header() {
                     pathname !== "/blog") ||
                     (pathname === "/contact" && link.href === "/contact") ||
                     (pathname === "/blog" && link.href === "/blog")) && (
-                    <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
-                      layoutId="navbar-active"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
-                  )}
+                      <motion.div
+                        className="absolute inset-0 z-[-1] rounded-md bg-primary/30"
+                        layoutId="navbar-active"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
                 </Link>
               </li>
             ))}
