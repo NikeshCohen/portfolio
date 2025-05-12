@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Startacus",
-    imageUrl: "/projects/startacus.png",
+    imageUrl: "/projects/startacus.webp",
     description:
       " A full-stack starter kit using the best tech out there. Fast, scalable, and ready for battle. Startacus gives you a production-ready foundation so   you can focus on what matters.",
     url: "https://startacus.dev/",
