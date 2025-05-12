@@ -9,6 +9,14 @@ export const PROJECTS: Project[] = [
     url: "https://qiklearn.club/",
   },
   {
+    name: "Startacus",
+    imageUrl: "/projects/startacus.png",
+    description:
+      " A full-stack starter kit using the best tech out there. Fast, scalable, and ready for battle. Startacus gives you a production-ready foundation so   you can focus on what matters.",
+    url: "https://startacus.dev/",
+    github: "https://github.com/NikeshCohen/Startacus",
+  },
+  {
     name: "DevConnect",
     imageUrl: "/projects/devconnect.webp",
     description:
