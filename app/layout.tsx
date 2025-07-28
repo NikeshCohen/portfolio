@@ -20,34 +20,35 @@ const font = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://your-portfolio-site.com"),
   title: {
-    default: "Nikesh Cohen | Full-Stack Developer Portfolio",
+    default: "Nikesh Cohen | Full Stack Dev",
     template: "%s | Nikesh Cohen",
   },
   icons: [{ rel: "icon", url: "/icon.png" }],
-  description: "Full-Stack Developer Portfolio showcasing projects and skills",
+  description:
+    "Exploring the intersection of code, creativity, and problem solving. Building digital experiences that matter.",
   keywords:
-    "Full-stack developer, portfolio, web development, React, Tailwind CSS, Node.js, TypeScript, JavaScript, Nikesh Cohen, Nikesh, Nikesh Developer, developer projects",
+    "software developer, web development, React, TypeScript, Node.js, creative coding, problem solving, digital experiences, Nikesh Cohen",
   authors: {
     name: "Nikesh Cohen",
     url: "https://github.com/nikescohen",
   },
   publisher: "Nikesh Cohen",
   openGraph: {
-    title: "Nikesh Cohen | Full-Stack Developer Portfolio",
+    title: "Nikesh Cohen | Full Stack Dev",
     description:
-      "Full-Stack Developer Portfolio showcasing projects and skills",
+      "Exploring the intersection of code, creativity, and problem solving. Building digital experiences that matter.",
     url: "https://your-portfolio-site.com",
     type: "website",
     locale: "en",
-    siteName: "Nikesh Cohen Portfolio",
+    siteName: "Nikesh Cohen",
   },
   twitter: {
     card: "summary_large_image",
     site: "@nikesccohen",
     creator: "@nikesccohen",
-    title: "Nikesh Cohen | Full-Stack Developer Portfolio",
+    title: "Nikesh Cohen | Full Stack Dev",
     description:
-      "Full-Stack Developer Portfolio showcasing projects and skills",
+      "Exploring the intersection of code, creativity, and problem solving. Building digital experiences that matter.",
   },
 };
 
