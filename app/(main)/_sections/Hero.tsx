@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import HeroImg from "../_components/HeroImg";
+import HeroImg from "../../_components/HeroImg";
 
 function Hero() {
   return (

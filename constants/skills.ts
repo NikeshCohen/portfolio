@@ -8,19 +8,9 @@ export const SKILLS: SkillIcon[] = [
     darkIcon: skillIcons.AWS.dark,
   },
   {
-    name: "Bun",
-    lightIcon: skillIcons.Bun.light,
-    darkIcon: skillIcons.Bun.dark,
-  },
-  {
     name: "Cloudflare",
     lightIcon: skillIcons.Cloudflare.light,
     darkIcon: skillIcons.Cloudflare.dark,
-  },
-  {
-    name: "Deno",
-    lightIcon: skillIcons.Deno.light,
-    darkIcon: skillIcons.Deno.dark,
   },
   {
     name: "Electron",
@@ -56,11 +46,6 @@ export const SKILLS: SkillIcon[] = [
     name: "MySQL",
     lightIcon: skillIcons.MySQL.light,
     darkIcon: skillIcons.MySQL.dark,
-  },
-  {
-    name: "Netlify",
-    lightIcon: skillIcons.Netlify.light,
-    darkIcon: skillIcons.Netlify.dark,
   },
   {
     name: "Next.js",
@@ -108,10 +93,5 @@ export const SKILLS: SkillIcon[] = [
   {
     name: "TypeScript",
     singleIcon: skillIcons.TypeScript.single,
-  },
-  {
-    name: "Vercel",
-    lightIcon: skillIcons.Vercel.light,
-    darkIcon: skillIcons.Vercel.dark,
   },
 ];

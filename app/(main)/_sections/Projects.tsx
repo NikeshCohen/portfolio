@@ -19,7 +19,7 @@ function Project({ project }: { project: Project }) {
         <Image
           src={project.imageUrl}
           alt={`${project.name}`}
-          layout="fill"
+          fill
           className="rounded-md transition-opacity duration-300"
         />
       </div>
@@ -40,7 +40,7 @@ function Project({ project }: { project: Project }) {
         {project.github && (
           <Link href={project.github} target="_blank">
             <Button
-              className="border-primary bg-transparent hover:bg-transparent w-full md:w-auto text-primary hover:text-primary"
+              className="bg-transparent hover:bg-transparent border-primary w-full md:w-auto text-primary hover:text-primary"
               variant="outline"
               effect="ringHover"
             >
@@ -59,10 +59,10 @@ function Projects() {
       <h1 className="inline-block font-bold text-4xl lg:text-5xl">Projects</h1>
       <div className="mt-6">
         <p className="mb-8 max-w-4xl">
-          Talk is cheap—I believe in putting my money where my code is. Here’s a
-          collection of projects that showcase my skills, creativity, and
-          dedication to building things that work beautifully. Dive in and see
-          what I’ve been up to!
+          Talk is cheap—I believe in putting my money where my code is.
+          Here&apos;s a collection of projects that showcase my skills,
+          creativity, and dedication to building things that work beautifully.
+          Dive in and see what I&apos;ve been up to!
         </p>
 
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
@@ -75,9 +75,9 @@ function Projects() {
       <div className="mt-8 mr-auto ml-auto pt-4 border-t-4 max-w-4xl">
         <h2 className="font-semibold text-2xl text-center">Want More?</h2>
         <p className="mt-4 mr-auto mb-2 ml-auto max-w-2xl text-center">
-          Five projects barely scratch the surface. My GitHub is like an
-          all-you-can-code buffet. Check it out for the full lineup of what I’ve
-          been building!
+          Six projects barely scratch the surface. My GitHub is like an
+          all-you-can-code buffet. Check it out for the full lineup of what
+          I&apos;ve been building!
         </p>
 
         <div className="flex justify-center">
